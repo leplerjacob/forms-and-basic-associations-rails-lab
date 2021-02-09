@@ -8,6 +8,11 @@
 
 # ID3 tag music genres are surprisingly specific.
 
+Genre.destroy_all
+Artist.destroy_all
+Song.destroy_all
+Note.destroy_all
+
 genres = Hash[[
   "Blues",
   "Classic Rock",
@@ -159,4 +164,59 @@ genres = Hash[[
   "Synthpop"
 ].map { |genre| [genre, Genre.find_or_create_by(name: genre)] }]
 
+
+artists = Hash[[
+  "Barry Gibb",
+  "Eminem",
+  "Alan Jackson",
+  "Bon Iver",
+  "Foo Fighters",
+  "The Band Perry",
+  "Harry Styles",
+  "Gorillaz",
+  "Enya",
+  "Tyler",
+  "Staind",
+  "Post Malone",
+  "Original Broadway Cast of Hamilton",
+  "Talking Heads",
+  "Creed",
+  "Taylor Swift",
+  "The Beatles",
+  "Leon Bridges",
+  "Michael Jackson"
+].map { |artist| [artist, Artist.find_or_create_by(name: artist)]}]
+
+songs = Hash[[
+  "Late Land",
+  "A Single Gift",
+  "Cold Rhythm",
+  "better Half House",
+  "Still Need Midnight",
+  "Lost People",
+  "Pink Relationship",
+  "True Love Knows No Sounds",
+  "Calming Stranger",
+  "Bass Midnight Stroll",
+  "Unlikely Hours",
+  "Club Night",
+  "Blue Overture",
+  "Chopin Mind",
+  "Unspeakable Amazement",
+  "Acid Girl",
+  "Higher Morning Sun",
+  "Southern Promises",
+  "Rhythm Of Twilight"
+].map{ |song| [song, Song.find_or_create_by(title: song)]}]
+
+notes = Hash[[
+  "Lorem ipsum dolor sit amet.",
+  "consectetur adipiscing elit",
+  "eiusmod tempor incididunt ut",
+  "Tincidunt praesent semper feugiat",
+  "Mauris pellentesque pulvinar pellentesque",
+  "Vel pharetra vel turpis",
+  "Suscipit adipiscing bibendum",
+  "Scelerisque eu ultrices"
+].map{ |note| [note, Note.find_or_create_by(content: note)]}]
 

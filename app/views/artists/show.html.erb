@@ -1,2 +1,13 @@
-<h1>Artists#show</h1>
-<p>Find me in app/views/artists/show.html.erb</p>
+<h2><%= @artist.name %></h2>
+<table>
+    <thead>
+        <th>Song Titles</th>
+    </thead>
+    <tbody>
+        <% @artist.songs.each do |song| %>
+        <tr>
+            <td><%= song.title %></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
